@@ -25,7 +25,7 @@ import { UpsertCustomerDto } from '../dtos/upsertCustomer.dto';
 @ApiTags('Customer Auth')
 @Controller('auth/customer')
 export class CustomerAuthController {
-  constructor(private authService: CustomerAuthService) { }
+  constructor(private authService: CustomerAuthService) {}
 
   @Post('signup')
   public async signup(
