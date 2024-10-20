@@ -3,5 +3,5 @@ export class CustomerLoginResponseDto {
   email: string;
   access_token: string;
   access_token_expiry: string;
-  refreshToken: string;
+  refresh_token: string;
 }

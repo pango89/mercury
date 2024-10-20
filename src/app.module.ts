@@ -16,7 +16,7 @@ import { CustomersModule } from './modules/customers.module';
       username: process.env.MERCURY_DB_USERNAME,
       password: process.env.MERCURY_DB_PASSWORD,
       database: process.env.MERCURY_DB_DATABASE,
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: ['src/**/*.entity{.ts,.js}'],
       logging: true,
       synchronize: false,
     }),

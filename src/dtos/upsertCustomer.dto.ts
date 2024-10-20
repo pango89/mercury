@@ -3,36 +3,42 @@ import {
   IsString,
   IsEmail,
   Length,
-  Matches,
+  // Matches,
 } from 'class-validator';
 import {
   OAuthProvider,
-  PASSWORD_REGEX,
+  // PASSWORD_REGEX,
   defaults,
 } from '../configurations/constant';
 import { Customer } from '../entities/customer.entity';
-import { ERRORS } from '../configurations/error';
+// import { ERRORS } from '../configurations/error';
 import { getHash } from '../utils/crypto.util';
 import { generatePassword } from '../utils/passwordGenerator.util';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class UpsertCustomerDto {
+  @ApiProperty({})
   @IsString()
   @IsNotEmpty()
   public first_name: string;
 
+  @ApiProperty({})
   @IsString()
   @IsNotEmpty()
   public last_name: string;
 
+  @ApiProperty({})
   @IsNotEmpty()
   @IsEmail()
   public email: string;
 
+  @ApiProperty({})
   @IsString()
   @IsNotEmpty()
   @Length(2, 2)
   public country_code: string;
 
+  @ApiProperty({})
   @IsString()
   @IsNotEmpty()
   // @Matches(new RegExp(PASSWORD_REGEX.UPPER_CASE), {

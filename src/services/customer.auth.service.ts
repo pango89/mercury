@@ -27,7 +27,7 @@ export class CustomerAuthService {
     private jwtService: JwtService,
     private customerRefreshTokenService: CustomerRefreshTokenService,
     private customersService: CustomersService,
-  ) {}
+  ) { }
 
   public async signup(
     customerRegistrationDto: UpsertCustomerDto,
@@ -123,7 +123,7 @@ export class CustomerAuthService {
     loginResponseDto.customer_id = customer.customerId;
     loginResponseDto.email = customer.email ?? null;
     loginResponseDto.access_token = accessToken;
-    loginResponseDto.refreshToken =
+    loginResponseDto.refresh_token =
       await this.customerRefreshTokenService.getRefreshToken(
         customer.customerId,
       );

@@ -3,8 +3,8 @@ import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import { WinstonModule } from 'nest-winston';
-import { options } from './configurations/logger';
+// import { WinstonModule } from 'nest-winston';
+// import { options } from './configurations/logger';
 import { HttpExceptionFilter } from './exception-filters/http-exception.filter';
 import { expressMiddleware } from 'cls-rtracer';
 import * as express from 'express';
@@ -13,7 +13,7 @@ import { morganMiddleware } from './configurations/http-logger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    logger: WinstonModule.createLogger(options),
+    // logger: WinstonModule.createLogger(options),
     cors: {
       origin:
         process.env.CORS_ORIGIN === '*'
